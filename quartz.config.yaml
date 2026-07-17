@@ -203,10 +203,10 @@ plugins:
     options:
       provider: giscus
       options:
-        repo: TODO:username/repo-name
-        repoId: TODO:your-repo-id
+        repo: "gibbonsc/quartzblog"
+        repoId: "R_kgDOTb4M1g"
         category: Announcements
-        categoryId: TODO:your-category-id
+        categoryId: "DIC_kwDOTb4M1s4DBa43"
         mapping: url
         strict: true
         reactionsEnabled: true
