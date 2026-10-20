@@ -10,7 +10,7 @@ Your team is designing the core control system for a Smart Thermostat. The syste
 
 You're deciding how to divide responsibilities between two classes:
 
-- `ThermostatMode`: responsible for boolean states `_heatMode`, `_coolMode`.
+- `ThermostatMode`: responsible for boolean states `_heat`, `_cool`.
 - `SmartThermostat`: responsible for temperatures.
 
 Below are proposed class designs.
