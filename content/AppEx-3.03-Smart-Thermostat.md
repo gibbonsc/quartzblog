@@ -19,26 +19,28 @@ Below are proposed class designs.
 
 Which UML design best protects the system from entering an invalid or unsafe state, while keeping class responsibilities clean and properly encapsulated?
 
-A)
+### Option A
 
 ![Option A](images/Thermostat1A.png)
 
-B)
+### Option B
 
 ![Option B](images/Thermostat1B.png)
 
-C)
+### Option C
 
 ![Option C](images/Thermostat1C.png)
 
-D)
+### Option D
 
 ![Option D](images/Thermostat1D.png)
 
-E)
+### Option E
 
 ![Option E](images/Thermostat1E.png)
 
-F)
+### Option F
 
 ![Option F](images/Thermostat1F.png)
+
+---
