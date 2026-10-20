@@ -1,0 +1,17 @@
+.mermaid {
+  .classGroup rect {
+    min-width: 960px !important; /* Prevents class boxes from squeezing methods */
+  }
+  g.classGroup text {
+    font-size: 13px !important; /* Slightly reduces text size for cleaner fits */
+  }
+}
+
+/* Prevent Mermaid class diagram method lines from wrapping and center-aligning */
+.mermaid g.classGroup text {
+  text-anchor: start !important; /* Left-align class member text */
+}
+
+.mermaid g.classGroup text tspan {
+  white-space: pre !important;  /* Prevent automated line wrapping */
+}
