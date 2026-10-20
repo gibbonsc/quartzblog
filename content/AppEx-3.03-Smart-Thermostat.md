@@ -1,4 +1,3 @@
-
 # Application Exercise "Smart Thermostat"
 
 ## Scenario
@@ -20,164 +19,26 @@ Below are proposed class designs.
 
 Which UML design best protects the system from entering an invalid or unsafe state, while keeping class responsibilities clean and properly encapsulated?
 
-### Option A: Public Direct Access (Open Mutation)
+A)
 
-```mermaid
-%%{init: {'classDiagram': {'textWrap': false}}}%%
-classDiagram
-    class SmartThermostat {
-        +currentTemp : double
-        +targetTemp : double
-        +mode : ThermostatMode
-        +SmartThermostat(currentTemp,targetTemp)
-    }
-    class ThermostatMode {
-        +heat : bool
-        +cool : bool
-        +ThermostatMode()
-        +SetHeat() void
-        +SetCool() void
-        +SetOff() void
-    }
-    SmartThermostat <-- ThermostatMode
-```
+![Option A](images/Thermostat1A.png)
 
-### Option B: Pure Getter/Setter Pass-Through
+B)
 
-```mermaid
-%%{init: {'classDiagram': {'textWrap': false}}}%%
-classDiagram
-    class SmartThermostat {
-        -_currentTemp : double
-        -_targetTemp : double
-        -_mode : ThermostatMode
-        +SmartThermostat(currTemp,targetTemp)
-        +GetCurrentTemp() double
-        +SetCurrentTemp(temp double) void
-        +GetTargetTemp() double
-        +SetTargetTemp(temp double) void
-        +GetMode() ThermostatMode
-        +SetMode(mode) void
-    }
-    class ThermostatMode {
-        -_heat : bool
-        -_cool : bool
-        +ThermostatMode()
-        +GetHeat() bool
-        +SetHeat(heat bool) void
-        +GetCool() bool
-        +SetCool(cool bool) void
-    }
-    SmartThermostat <-- ThermostatMode
-```
+![Option B](images/Thermostat1B.png)
 
-### Option C: Delegated Mode Guarding (Smart Mode, Exposed Sub-Object)
+C)
 
-```mermaid
-%%{init: {'classDiagram': {'textWrap': false}}}%%
-classDiagram
-    class SmartThermostat {
-        -_currentTemp : double
-        -_targetTemp : double
-        -_mode : ThermostatMode
-        +SmartThermostat(currTemp,targetTemp)
-        +GetCurrentTemp() double
-        +GetTargetTemp() double
-        +SetTargetTemp(temp) void
-        +GetMode() ThermostatMode
-    }
-    class ThermostatMode {
-        -_heat : bool
-        -_cool : bool
-        +ThermostatMode()
-        +Heat() void
-        +Cool() void
-        +Off() void
-        +GetModeString() string
-    }
-    SmartThermostat <-- ThermostatMode
-```
+![Option C](images/Thermostat1C.png)
 
-### Option D: Centralized Thermostat Guarding (Fully Hidden Mode Object)
+D)
 
-```mermaid
-%%{init: {'classDiagram': {'textWrap': false}}}%%classDiagram
-    class SmartThermostat {
-        -_currentTemp : double
-        -_targetTemp : double
-        -_mode : ThermostatMode
-        +SmartThermostat(currTemp,targetTemp)
-        +GetCurrentTemp() double
-        +GetTargetTemp() double
-        +SetTargetTemp(temp) void
-        +SetModeHeat() void
-        +SetModeCool() void
-        +SetModeOff() void
-        +GetStatusSummary() string
-    }
-    class ThermostatMode {
-        -_heat : bool
-        -_cool : bool
-        +ThermostatMode()
-        +SetHeatState(h) void
-        +SetCoolState(c) void
-        +IsHeat() bool
-        +IsCool() bool
-    }
-    SmartThermostat <-- ThermostatMode
-```
+![Option D](images/Thermostat1D.png)
 
-### Option E: Coordinated Dual-Guarding (Shared Validation Responsibilities)
+E)
 
-```mermaid
-%%{init: {'classDiagram': {'textWrap': false}}}%%
-classDiagram
-    class SmartThermostat {
-        -_currentTemp : double
-        -_targetTemp : double
-        -_mode : ThermostatMode
-        +SmartThermostat(currTemp,targetTemp)
-        +GetCurrentTemp() double
-        +GetTargetTemp() double
-        +SetTargetTemp(temp) void
-        +RequestModeChange(requestedMode) bool
-        +GetStatusSummary() string
-    }
-    class ThermostatMode {
-        -_heat : bool
-        -_cool : bool
-        +ThermostatMode()
-        +ChangeMode(enableHeat,enableCool) bool
-        +GetCurrentMode() string
-    }
-    SmartThermostat <-- ThermostatMode
-```
+![Option E](images/Thermostat1E.png)
 
-### Option F: Intent-Based Domain Actions (Action Methods Only)
+F)
 
-```mermaid
-%%{init: {'classDiagram': {'textWrap': false}}}%%
-classDiagram
-    class SmartThermostat {
-        -_currentTemp : double
-        -_targetTemp : double
-        -_mode : ThermostatMode
-        +SmartThermostat(currTemp,targetTemp)
-        +GetCurrentTemp() double
-        +GetTargetTemp() double
-        +AdjustTargetTemperature(delta) void
-        +HeatTo(newTargetTemp) void
-        +CoolTo(newTargetTemp) void
-        +TurnOff() void
-        +GetStatusSummary() string
-    }
-    class ThermostatMode {
-        -_heat : bool
-        -_cool : bool
-        +ThermostatMode()
-        +SetModeFlags(heat,cool) void
-        +IsHeatActive() bool
-        +IsCoolActive() bool
-    }
-    SmartThermostat <-- ThermostatMode
-```
+![Option F](images/Thermostat1F.png)
