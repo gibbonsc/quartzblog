@@ -42,4 +42,4 @@ Some other inheritance design. (Sketch it now. Jot down your reasons, identifyin
 
 ## After discussion: continue designing
 
-You still need to decide how a class for the reflection activity, another for the list-writing activity, and the `Main` method of `Program.cs` fit into your design. Revise as you feel inspired. Design an additional helper class if you think one that has a clear responsibility and doesn't fit naturally in the existing classes.
+You still need to decide how a class for the reflection activity, another for the list-writing activity, and the `Main` method of `Program.cs` fit into your design. Revise as you feel inspired. Design an additional helper class if you think of one that has a clear responsibility and doesn't fit naturally in the existing classes.
