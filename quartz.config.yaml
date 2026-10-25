@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Carl's Maundering Blog
+  pageTitle: Carl's Maunderings
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
