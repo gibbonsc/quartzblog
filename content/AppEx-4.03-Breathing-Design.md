@@ -26,7 +26,7 @@ Which candidates belong in the base `Activity` class? Which belong in the derive
 
 ### option A
 
-![Option A][BreathingA.png]
+![Option A](BreathingA.png)
 
 ### option B
 
