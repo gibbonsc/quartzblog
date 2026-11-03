@@ -9,4 +9,4 @@ title: Carl's Maunderings
 Application Exercises for *Programming with Classes*:
 [[AppEx-3.03-Smart-Thermostat]]
 [[AppEx-4.03-Breathing-Design]]
-[[AppEx-4.04-MediaStream-Inheritance]]
+[[AppEx-4.04-MediaStream-Inheritance-Code]]
